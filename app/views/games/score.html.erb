@@ -1,6 +1,7 @@
 <h1>Result</h1>
 
 <p><%= @result %></p>
-<p>Your score is <%= @score %></p>
+<p>Your score is: <strong><%= @score.round(2) %></strong></p>
+<p>Your time taken was: <strong><%= (@time.to_f*1000) %> seconds</strong></p>
 
 <p class="link"><%= link_to 'Play again', new_path %></p>
