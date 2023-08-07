@@ -12,13 +12,13 @@ class GamesController < ApplicationController
     @score = 0
     if self.included
       if self.found
-        @result = "Congratulations! #{params[:word].upcase} is a valid English word!"
+        @result = "Congratulations! '#{params[:word].upcase}' is a valid English word!"
         @score = (@word.size * 10) / (@time.to_f * 1000)
       else
-        @result = "Sorry, but #{params[:word].upcase} does not appear to be a valid English word!"
+        @result = "Sorry, but '#{params[:word].upcase}' does not appear to be a valid English word!"
       end
     else
-      @result = "Sorry but #{params[:word].upcase} can't be built out of #{params[:letters].split.join(', ')}"
+      @result = "Sorry but '#{params[:word].upcase}' can't be built out of #{params[:letters].split.join(', ')}"
     end
   end
 
